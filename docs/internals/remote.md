@@ -6,6 +6,12 @@ Tailscale, SSH, and T3 Connect change how the client reaches that server; they d
 not introduce another execution model. See
 [remote access](../user/remote-access.md) for setup.
 
+Session-scoped execution and cluster configuration are separate proposed extensions,
+not current peer-link behavior. [ADR-0001](../adr/0001-use-session-scoped-execution-targets.md)
+keeps a thread on its home environment while leasing execution elsewhere;
+[ADR-0002](../adr/0002-distribute-versioned-cluster-configuration.md) adds opt-in
+configuration distribution without sharing thread databases or execution grants.
+
 ## Identity is independent of the route
 
 An environment keeps its ID across server restarts and endpoint changes. Saved
